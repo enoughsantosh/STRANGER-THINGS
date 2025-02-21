@@ -1,0 +1,268 @@
+{
+  "seasons": {
+
+  "1": {
+    "year": "2016",
+    "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+    "episodes": [
+      {
+        "title": "Chapter One: The Vanishing of Will Byers",
+        "duration": "48m",
+        "thumbnail": "/uLES7sRpy7Ih6Kr6XCaYj1GyfTw.jpg",
+        "description": "On his way home from a friend's house, young Will sees something terrifying. Nearby, a sinister secret lurks in the depths of a government lab.",
+        "releaseDate": "July 15, 2016",
+        "link": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      },
+      {
+        "title": "Chapter Two: The Weirdo on Maple Street",
+        "duration": "46m",
+        "thumbnail": "/8iA56ugQyHZmX81wSsNqwXjCE6F.jpg",
+        "description": "Lucas, Mike and Dustin try to talk to the girl they found in the woods. Hopper questions an anxious Joyce about an unsettling phone call.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Three: Holly, Jolly",
+        "duration": "51m",
+        "thumbnail": "/5snULpWQWp7aqFto7UbRcEkEyyS.jpg",
+        "description": "An increasingly concerned Nancy looks for Barb and finds out what Jonathan's been up to. Joyce is convinced Will is trying to talk to her.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Four: The Body",
+        "duration": "49m",
+        "thumbnail": "/60wmC1e20HV8gu688GAhsWxqxPx.jpg",
+        "description": "Refusing to believe Will is dead, Joyce tries to connect with her son. The boys make plans to find Will using Eleven's powers.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Five: The Flea and the Acrobat",
+        "duration": "52m",
+        "thumbnail": "/exT4NW9EdXG1qLZHKJnRpq3gh1H.jpg",
+        "description": "Hopper breaks into the lab while Nancy and Jonathan confront the force that took Will. The boys talk to Mr. Clarke about traveling to other dimensions.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Six: The Monster",
+        "duration": "46m",
+        "thumbnail": "/lNS6qycyucewz3duTr1tf1LU688.jpg",
+        "description": "A frantic Jonathan looks for Nancy in the darkness, but Steve's looking for her too. Hopper and Joyce uncover the truth about the lab's experiments.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Seven: The Bathtub",
+        "duration": "41m",
+        "thumbnail": "/mkZzUTNWYfGwRH2f1TzlRgouypa.jpg",
+        "description": "Eleven struggles to reach Will, while Lucas warns that 'the bad men are coming.' Nancy and Jonathan show the police what Jonathan caught on camera.",
+        "releaseDate": "July 15, 2016"
+      },
+      {
+        "title": "Chapter Eight: The Upside Down",
+        "duration": "54m",
+        "thumbnail": "/1teJ5dbuepfqOOs9uYhYTUjr2qs.jpg",
+        "description": "Dr. Brenner holds Hopper and Joyce for questioning while the boys wait with Eleven in the gym. Nancy and Jonathan prepare for battle.",
+        "releaseDate": "July 15, 2016"
+      }
+    ]
+  },
+    "2": {
+      "year": "2017",
+      "description": "It's been nearly a year since Will's strange disappearance. But life's hardly back to normal in Hawkins. Not even close.",
+      "episodes": [
+        {
+          "title": "Chapter One: MADMAX",
+          "duration": "48m",
+          "thumbnail": "/efz0MgPAxPw11PIeAJNgKKg3Paa.jpg",
+          "description": "As the town preps for Halloween, a high-scoring rival shakes things up at the arcade, and a skeptical Hopper inspects a field of rotting pumpkins.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Two: Trick or Treat, Freak",
+          "duration": "56m",
+          "thumbnail": "/oGMZxF4yivOSCGZTMgiDD2Ye2Hi.jpg",
+          "description": "After Will sees something terrible on trick-or-treat night, Mike wonders whether Eleven's still out there. Nancy wrestles with the truth about Barb.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Three: The Pollywog",
+          "duration": "51m",
+          "thumbnail": "/792NQjFydcr5ucb1sga55LS6Vt3.jpg",
+          "description": "Dustin adopts a strange new pet, and Eleven grows increasingly impatient. A well-meaning Bob urges Will to stand up to his fears.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Four: Will the Wise",
+          "duration": "46m",
+          "thumbnail": "/wZ7ZDnftX9Y1O25I5tOaEKdK7FT.jpg",
+          "description": "An ailing Will opens up to Joyce -- with disturbing results. While Hopper digs for the truth, Eleven unearths a surprising discovery.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Five: Dig Dug",
+          "duration": "58m",
+          "thumbnail": "/oshY3LAwQRzhcjmEEr7EbOnypuU.jpg",
+          "description": "Nancy and Jonathan swap conspiracy theories with a new ally as Eleven searches for someone from her past. 'Bob the Brain' tackles a difficult problem.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Six: The Spy",
+          "duration": "51m",
+          "thumbnail": "/d90nCiTEACFEUd3fcX8DrLBi5DL.jpg",
+          "description": "Will's connection to a shadowy evil grows stronger, but no one's quite sure how to stop it. Elsewhere, Dustin and Steve forge an unlikely bond.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Seven: The Lost Sister",
+          "duration": "45m",
+          "thumbnail": "/kgOaaTbAutwAoA7tkVzYCfTjPXn.jpg",
+          "description": "Psychic visions draw Eleven to a band of violent outcasts and an angry girl with a shadowy past.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Eight: The Mind Flayer",
+          "duration": "47m",
+          "thumbnail": "/k3cEwGAWSWbkauYBHSdFnEdalkb.jpg",
+          "description": "An unlikely hero steps forward when a deadly development puts the Hawkins Lab on lockdown, trapping Will and several others inside.",
+          "releaseDate": "October 27, 2017"
+        },
+        {
+          "title": "Chapter Nine: The Gate",
+          "duration": "62m",
+          "thumbnail": "/pTWGFXMAWIEyKHdHxa0znVbYfTE.jpg",
+          "description": "Eleven makes plans to finish what she started while the survivors turn up the heat on the monstrous force that's holding Will hostage.",
+          "releaseDate": "October 27, 2017"
+        }
+      ]
+    },
+    "3": {
+      "year": "2019",
+      "description": "Summer brings new jobs and budding romance. But the mood shifts when Dustin's radio picks up a Russian broadcast, and Will's sense that something is wrong intensifies.",
+      "episodes": [
+        {
+          "title": "Chapter One: Suzie, Do You Copy?",
+          "duration": "51m",
+          "thumbnail": "/97PVnrEQWEsdMnD08QDmMxLkV7h.jpg",
+          "description": "Summer brings new jobs and budding romance. But the mood shifts when Dustin's radio picks up a Russian broadcast, and Will's sense that something is wrong intensifies.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Two: The Mall Rats",
+          "duration": "50m",
+          "thumbnail": "/qDlMvdlRGzIGtKYdV9lktEUM4vj.jpg",
+          "description": "Nancy and Jonathan follow a lead, Steve and Robin sign on to a secret mission, and Max and Eleven go shopping. A rattled Billy has troubling visions.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Three: The Case of the Missing Lifeguard",
+          "duration": "50m",
+          "thumbnail": "/oxfQSyylp90cdwOVvCoUvWAW8od.jpg",
+          "description": "El and Max go on a search for Billy, Will declares a day without girls, and Steve and Dustin go on a stakeout. Joyce and Hopper return to Hawkins Lab.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Four: The Sauna Test",
+          "duration": "53m",
+          "thumbnail": "/bFRuAb0q7MN0RiJdo0RDMPSjLsK.jpg",
+          "description": "A code red brings the gang back together to face a frighteningly familiar evil. Karen urges Nancy to keep digging, and Robin finds a useful map.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Five: The Flayed",
+          "duration": "52m",
+          "thumbnail": "/cxIZ4btU6h9GQM1Fn0kotuaXlwo.jpg",
+          "description": "Strange surprises lurk inside an old farmhouse and deep beneath the Starcourt Mall. Meanwhile, the Mind Flayer is gathering strength.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Six: E Pluribus Unum",
+          "duration": "60m",
+          "thumbnail": "/dZKsMHJm8DPdBuqFcZxdIulrpNs.jpg",
+          "description": "Dr. Alexei reveals what the Russians have been building, and Eleven sees where Billy has been. Dustin and Erica stage a daring rescue.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Seven: The Bite",
+          "duration": "55m",
+          "thumbnail": "/6QA91GJK2ze1EaGPEKhil9MJIXx.jpg",
+          "description": "With time running out -- and an assassin close behind -- Hopper's crew races back to Hawkins, where El and the kids are preparing for war.",
+          "releaseDate": "July 4, 2019"
+        },
+        {
+          "title": "Chapter Eight: The Battle of Starcourt",
+          "duration": "78m",
+          "thumbnail": "/sT0fd7pEJ2AbKsXF511Xf3nrOk6.jpg",
+          "description": "Terror reigns in the food court when the Mind Flayer comes to collect. But down below, in the dark, the future of the world is at stake.",
+          "releaseDate": "July 4, 2019"
+        }
+      ]
+    },
+    "4": {
+      "year": "2022",
+      "description": "Darkness returns to Hawkins just in time for spring break, igniting fresh terror, disturbing memories — and an ominous new threat.",
+      "episodes": [
+        {
+          "title": "Chapter One: The Hellfire Club",
+          "duration": "76m",
+          "thumbnail": "/n66Hq27JXdiLLDcmaBpfPin5t7U.jpg",
+          "description": "Still reeling from the events last year, the gang tries to move on with their lives. However, a threat is brewing both on Earth and the Upside Down.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Two: Vecna's Curse",
+          "duration": "77m",
+          "thumbnail": "/f7TDfu49srrDclKfd9UjQSDhcWA.jpg",
+          "description": "A mysterious figure threatens to end Hawkins once and for all. The gang must unite to stop the impending doom.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Three: The Monster and the Superhero",
+          "duration": "63m",
+          "thumbnail": "/6q1UM63T5tiQcWrbsJvY3bunkyZ.jpg",
+          "description": "Murray and Joyce travel to Alaska while El faces serious consequences. Robin and Nancy make a startling discovery.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Four: Dear Billy",
+          "duration": "78m",
+          "thumbnail": "/u3LeFRR7AhyPp4y0Ii7hpkD488b.jpg",
+          "description": "Max is in grave danger... and running out of time. A patient at Pennhurst asylum has information about Victor Creel. El goes on a journey of self-discovery.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Five: The Nina Project",
+          "duration": "75m",
+          "thumbnail": "/yvXXeBv4zfDgwcZyxqH5LJAe4oV.jpg",
+          "description": "Owens takes El to Nevada for help with regaining her powers. Meanwhile, the rest of the gang searches for clues about the mysterious happenings in Hawkins.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Six: The Dive",
+          "duration": "75m",
+          "thumbnail": "/9EbhReDcbfmqLhDBg0Rn97z4lT.jpg",
+          "description": "Behind the Iron Curtain, a risky rescue mission gets underway. The California crew seeks help from a hacker. Steve takes one for the team.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Seven: The Massacre at Hawkins Lab",
+          "duration": "98m",
+          "thumbnail": "/eoCFavs6fSSxKAhHf0VroO2HFRt.jpg",
+          "description": "As Hopper braces to battle a monster, Eleven and Papa wrestle with the past. In Hawkins, Vecna claims another victim.",
+          "releaseDate": "May 27, 2022"
+        },
+        {
+          "title": "Chapter Eight: Papa",
+          "duration": "85m",
+          "thumbnail": "/sdNa4Z49RTZDkezFAMg00hciFZZ.jpg",
+          "description": "Nancy has sobering visions, and El passes an important test. Back in Hawkins, the gang gathers supplies and prepares for battle.",
+          "releaseDate": "July 1, 2022"
+        },
+        {
+          "title": "Chapter Nine: The Piggyback",
+          "duration": "150m",
+          "thumbnail": "/fvoa0Hosu4yK7TUiHglV8TvjMUB.jpg",
+          "description": "With selfless hearts and a clash of metal, heroes fight from every corner of the battlefield to save Hawkins and the world itself.",
+          "releaseDate": "July 1, 2022"
+        }
+      ]
+    }
+  }
+}
