@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Benguiat+ITC:wght@400;700&display=swap');
+        
+        :root {
+            --stranger-red: #e3001c;
+            --dark-bg: #0d0d0d;
+            --neon-glow: 0 0 10px #ff1111, 0 0 20px #ff1111, 0 0 30px #ff1111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #1a1a1a, var(--dark-bg));
+            font-family: 'Benguiat ITC', serif;
+            color: white;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .player-wrapper {
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(227, 0, 28, 0.2);
+        }
+
+        .back-button {
+            background: var(--stranger-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .episode-title {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--stranger-red);
+            text-shadow: var(--neon-glow);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .episode-info {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 0, 0, 0.1);
+        }
+
+        .episode-description {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .control-button {
+            background: rgba(227, 0, 28, 0.2);
+            color: white;
+            border: 1px solid var(--stranger-red);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .control-button:hover {
+            background: var(--stranger-red);
+            transform: translateY(-2px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        .quality-badge {
+            background: var(--stranger-red);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .episode-title {
+                font-size: 1.8rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .control-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Back to Episodes
+        </button>
+        
+        <div class="player-wrapper">
+            <h1 id="episodeTitle" class="episode-title"></h1>
+            
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="episode-info">
+                <p id="episodeDescription" class="episode-description"></p>
+                
+                <div class="meta-info">
+                    <span id="episodeDuration" class="duration">
+                        <i class="fas fa-clock"></i>
+                        <span></span>
+                    </span>
+                    <span class="quality-badge">HD</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-button" onclick="toggleFullScreen()">
+                    <i class="fas fa-expand"></i> Fullscreen
+                </button>
+
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const episodeId = urlParams.get('episode');
+
+        async function loadEpisode() {
+            try {
+                const response = await fetch('datass.json');
+                const data = await response.json();
+                
+                let foundEpisode = null;
+                Object.values(data.seasons).forEach(season => {
+                    season.episodes.forEach(episode => {
+                        if (episode.title === episodeId) {
+                            foundEpisode = episode;
+                        }
+                    });
+                });
+
+                if (foundEpisode && foundEpisode.title) {
+                    document.getElementById('videoSource').src = foundEpisode.link;
+                    document.getElementById('videoPlayer').poster = foundEpisode.thumbnail;
+                    document.getElementById('episodeTitle').innerText = foundEpisode.title;
+                    document.getElementById('episodeDuration').querySelector('span').innerText = foundEpisode.duration;
+                    
+                    // Add description if available, otherwise use placeholder
+                    document.getElementById('episodeDescription').innerText = 
+                        foundEpisode.description || 
+                        "Join the adventures in Hawkins as our heroes face supernatural forces, government conspiracies, and the mysteries of the Upside Down in this thrilling episode of Stranger Things.";
+                    
+                    document.getElementById('videoPlayer').load();
+                } else {
+                    document.querySelector('.player-wrapper').innerHTML = `
+                        <div style="text-align: center; padding: 2rem;">
+                            <h2 style="color: var(--stranger-red); font-size: 2rem; margin-bottom: 1rem;">
+                                Episode Not Found
+                            </h2>
+                            <p style="font-size: 1.2rem;">
+                                The episode you're looking for seems to be lost in the Upside Down.
+                            </p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading episode:', error);
+                document.querySelector('.player-wrapper').innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <h2 style="color: var(--stranger-red); font-size: 2rem; margin-bottom: 1rem;">
+                            Error Loading Episode
+                        </h2>
+                        <p style="font-size: 1.2rem;">
+                            Something went wrong. Please try again later.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        function toggleFullScreen() {
+            const video = document.getElementById('videoPlayer');
+            if (!document.fullscreenElement) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        function changeSpeed(speed) {
+            const video = document.getElementById('videoPlayer');
+            video.playbackRate = speed;
+            
+            // Update active state of speed buttons
+            document.querySelectorAll('.control-button').forEach(button => {
+                if (button.textContent.includes(speed + 'x')) {
+                    button.style.background = 'var(--stranger-red)';
+                } else if (button.textContent.includes('x')) {
+                    button.style.background = 'rgba(227, 0, 28, 0.2)';
+                }
+            });
+        }
+
+        loadEpisode();
+    </script>
+</body>
+</html>
