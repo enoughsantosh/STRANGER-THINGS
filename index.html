@@ -3,232 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stranger Things Fan Page</title>
+    <title>Stranger Things | Netflix</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Benguiat+ITC:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap');
         
         :root {
-            --stranger-red: #e3001c;
-            --dark-bg: #0d0d0d;
-            --neon-glow: 0 0 10px var(--stranger-red), 0 0 20px var(--stranger-red), 0 0 30px var(--stranger-red);
+            --netflix-red: #E50914;
+            --netflix-black: #141414;
+            --netflix-dark-gray: #181818;
         }
 
         body {
-            background: radial-gradient(circle at top, #1a1a1a, var(--dark-bg));
-            font-family: 'Benguiat ITC', serif;
+            background-color: var(--netflix-black);
+            font-family: 'Netflix Sans', sans-serif;
             overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
+            color: white;
         }
 
-        .background-elements div {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 0, 0, 0.1);
-            filter: blur(40px);
-            animation: moveBg 15s infinite alternate;
-            opacity: 0.5;
-        }
-
-        @keyframes moveBg {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(50px, 50px) rotate(180deg); }
-            100% { transform: translate(-50px, -50px) rotate(360deg); }
-        }
-
-        .stranger-title {
-            text-shadow: var(--neon-glow);
-            color: var(--stranger-red);
-            animation: flicker 4s infinite;
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(to bottom, rgba(20, 20, 20, 0.2), var(--netflix-black)),
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLbCoQYF9MXmNijrx7zxFp18HsR5nMYvzfdqfdFHflHa-SPC37un-pWGN5&s=10') center/cover no-repeat;
             position: relative;
         }
 
-        .stranger-title::before {
-            content: attr(data-text);
-            position: absolute;
-            left: 2px;
-            text-shadow: -1px 0 var(--stranger-red);
-            top: 0;
-            color: var(--stranger-red);
-            background: #000;
-            overflow: hidden;
-            clip: rect(0, 900px, 0, 0);
-            animation: noise-anim 2s infinite linear alternate-reverse;
-        }
-
-        @keyframes noise-anim {
-            0% { clip: rect(61px, 9999px, 94px, 0); }
-            5% { clip: rect(99px, 9999px, 18px, 0); }
-            10% { clip: rect(83px, 9999px, 98px, 0); }
-            /* Add more keyframes for glitch effect */
-            100% { clip: rect(120px, 9999px, 95px, 0); }
-        }
-
-        @keyframes flicker {
-            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
-            20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.4; }
-        }
-
-        .episode-card {
-            position: relative;
+        .netflix-card {
+            transition: all 0.3s ease;
             cursor: pointer;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(227, 0, 28, 0.2);
         }
 
-        .episode-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--stranger-red), transparent);
-            z-index: -1;
-            border-radius: 16px;
+        .netflix-card:hover {
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .netflix-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        .episode-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-glow);
+        .season-slider {
+            scrollbar-width: none;
         }
 
-        .episode-card:hover::before {
-            opacity: 1;
+        .season-slider::-webkit-scrollbar {
+            display: none;
         }
 
-        .episode-card img {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        .nav-bg {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
         }
 
-        .episode-card:hover img {
-            transform: scale(1.1);
+        .play-button {
+            background-color: white;
+            color: black;
+            transition: all 0.2s ease;
         }
 
-        .episode-details {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
+        .play-button:hover {
+            background-color: rgba(255, 255, 255, 0.75);
         }
 
-        .episode-card:hover .episode-details {
-            transform: translateY(-5px);
+        .more-info-button {
+            background-color: rgba(109, 109, 110, 0.7);
+            transition: all 0.2s ease;
         }
 
-        .season-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: transparent;
-            border: 1px solid var(--stranger-red);
+        .more-info-button:hover {
+            background-color: rgba(109, 109, 110, 0.4);
         }
 
-        .season-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
+        .episode-progress {
+            height: 2px;
+            background-color: #404040;
+        }
+
+        .episode-progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(227, 0, 28, 0.4), transparent);
-            transition: 0.5s;
-        }
-
-        .season-button:hover::before {
-            left: 100%;
-        }
-
-        .season-button.active {
-            background: var(--stranger-red);
-            box-shadow: var(--neon-glow);
-        }
-
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--dark-bg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .loading-text {
-            font-size: 2rem;
-            color: var(--stranger-red);
-            text-shadow: var(--neon-glow);
+            background-color: var(--netflix-red);
         }
     </style>
 </head>
-<body class="text-white">
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-text">Opening the Gate...</div>
-    </div>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-bg">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3_FUVPsUWnfx0QU6CEByIfTew5jRQDkqakK-hmaQ3-VQ4wCzYO06kWs&s=10" alt="Netflix" class="h-8">
+                <div class="hidden md:flex gap-6 text-sm">
+                    <a href="#" class="text-white hover:text-gray-300">Home</a>
+                    <a href="#" class="text-white hover:text-gray-300">TV Shows</a>
+                    <a href="#" class="text-white hover:text-gray-300">Movies</a>
+                    <a href="#" class="text-white hover:text-gray-300">New & Popular</a>
+                    <a href="#" class="text-white hover:text-gray-300">My List</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="text-white hover:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" width="30"alt="Profile" class="rounded">
+            </div>
+        </div>
+    </nav>
 
-    <div class="background-elements">
-        <div style="top: 10%; left: 20%;"></div>
-        <div style="top: 50%; right: 20%;"></div>
-        <div style="top: 30%; left: 50%;"></div>
-        <div style="top: 70%; left: 30%;"></div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-section flex items-end pb-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h1 class="text-6xl font-bold mb-4">Stranger Things</h1>
+                <p class="text-lg mb-6">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+                <div class="flex gap-4">
+                    <button class="play-button px-8 py-2 rounded flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        Play
+                    </button>
+                    <button class="more-info-button px-8 py-2 rounded flex items-center gap-2 text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        More Info
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <header class="relative py-12 mb-16 text-center">
-        <h1 class="text-6xl md:text-8xl stranger-title" data-text="STRANGER THINGS">STRANGER THINGS</h1>
-        <p class="mt-4 text-xl text-red-500 opacity-0" id="subTitle">Enter the Upside Down</p>
-    </header>
+    <!-- Season Selection -->
+    <section class="mb-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-medium mb-4">Episodes</h2>
+            <div class="season-slider flex gap-4 overflow-x-auto pb-4" id="seasonTabs">
+                <!-- Season tabs will be inserted here -->
+            </div>
+        </div>
+    </section>
 
-    <div class="container mx-auto px-4 mb-12">
-        <div class="flex flex-wrap justify-center gap-6" id="seasonTabs"></div>
-    </div>
-
-    <div class="container mx-auto px-4 mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="episodeGrid"></div>
-    </div>
+    <!-- Episodes Grid -->
+    <section class="mb-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="episodeGrid">
+                <!-- Episode cards will be inserted here -->
+            </div>
+        </div>
+    </section>
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Initialize GSAP animations
         function initAnimations() {
-            // Animate title
-            gsap.from('.stranger-title', {
-                duration: 2,
-                y: 100,
-                opacity: 0,
-                ease: 'power4.out'
-            });
-
-            // Animate subtitle
-            gsap.to('#subTitle', {
+            gsap.from('.hero-section h1', {
                 duration: 1,
-                opacity: 1,
-                delay: 1,
-                ease: 'power2.out'
-            });
-
-            // Animate season tabs
-            gsap.from('#seasonTabs button', {
-                duration: 0.8,
                 y: 50,
                 opacity: 0,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero-section p', {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero-section button', {
+                duration: 0.8,
+                y: 20,
+                opacity: 0,
+                delay: 0.6,
                 stagger: 0.2,
-                ease: 'back.out(1.7)'
+                ease: 'power3.out'
             });
         }
 
@@ -243,29 +200,21 @@
                 
                 Object.keys(seasons).forEach(season => {
                     const button = document.createElement('button');
-                    button.className = 'season-button px-6 py-3 rounded-lg text-white text-lg hover:text-white transition-all duration-300';
+                    button.className = 'px-6 py-2 rounded-full text-white text-sm font-medium transition-all duration-300 hover:bg-gray-800';
                     button.textContent = `Season ${season}`;
                     button.onclick = () => {
-                        document.querySelectorAll('.season-button').forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
+                        document.querySelectorAll('#seasonTabs button').forEach(btn => 
+                            btn.classList.remove('bg-white', 'text-black'));
+                        button.classList.add('bg-white', 'text-black');
                         displaySeason(season, seasons[season].episodes);
                     };
                     seasonTabs.appendChild(button);
                 });
 
                 // Activate first season by default
-                seasonTabs.firstChild.classList.add('active');
+                seasonTabs.firstChild.classList.add('bg-white', 'text-black');
                 displaySeason(1, seasons[1].episodes);
-
-                // Remove loading overlay
-                gsap.to('#loadingOverlay', {
-                    duration: 1,
-                    opacity: 0,
-                    onComplete: () => {
-                        document.getElementById('loadingOverlay').style.display = 'none';
-                        initAnimations();
-                    }
-                });
+                initAnimations();
 
             } catch (error) {
                 console.error('Error loading episodes:', error);
@@ -278,37 +227,34 @@
             
             episodes.forEach((episode, index) => {
                 const card = document.createElement('div');
-                card.className = 'episode-card';
+                card.className = 'netflix-card bg-netflix-dark-gray rounded-md overflow-hidden';
                 card.innerHTML = `
-                    <img src="https://image.tmdb.org/t/p/w500${episode.thumbnail}" alt="${episode.title}">
-                    <div class="episode-details">
-                        <h3 class="text-xl text-red-500 font-bold mb-2">${episode.title}</h3>
-                        <p class="text-sm text-gray-300 mb-3">${episode.description}</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-red-400 text-sm">${episode.duration}</span>
-                            <span class="text-sm text-gray-400">Episode ${index + 1}</span>
+                    <div class="relative">
+                        <img src="https://image.tmdb.org/t/p/w500${episode.thumbnail}" 
+                             alt="${episode.title}" 
+                             class="w-full aspect-video object-cover">
+                        <div class="card-overlay absolute inset-0 flex items-end p-4">
+                            <div>
+                                <h3 class="text-lg font-medium mb-2">${episode.title}</h3>
+                                <div class="flex items-center gap-4 text-sm text-gray-400 mb-2">
+                                    <span>${episode.duration}</span>
+                                    <span>Episode ${index + 1}</span>
+                                </div>
+                                <p class="text-sm text-gray-300">${episode.description}</p>
+                                <div class="episode-progress mt-3">
+                                    <div class="episode-progress-bar" style="width: ${Math.random() * 100}%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
 
                 card.addEventListener('click', () => {
-                    gsap.to(card, {
-                        duration: 0.3,
-                        scale: 0.95,
-                        yoyo: true,
-                        repeat: 1,
-                        onComplete: () => {
-                            window.location.href = `demo.html?episode=${episode.title}`;
-                        }
-                    });
+                    window.location.href = `demo.html?episode=${episode.title}`;
                 });
 
                 episodeGrid.appendChild(card);
-
-
             });
-
-
         }
 
         loadEpisodes();
